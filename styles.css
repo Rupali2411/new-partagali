@@ -1,0 +1,620 @@
+/* Define CSS Variables for Colors, Fonts, and Spacing */
+:root {
+  /* Colors */
+  --bg-color: #0C1418;
+  --primary-color: white;
+  --accent-color: #FBD784;
+
+  /* Typography */
+  --font-family-primary: 'Inter', sans-serif;
+  --font-family-secondary: 'Chronicle Display', serif;
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-large: 4rem;
+  --font-weight: 500;
+}
+@font-face {
+  font-family: 'Chronicle Display';
+  src: url('/fonts/ChronicleDisplay-Light.woff2') format('woff2'),
+       url('/fonts/ChronicleDisplay-Light.woff') format('woff'),
+       url('/fonts/ChronicleDisplay-Light.ttf') format('truetype');
+  font-weight: 300; /* Lighter weight */
+  font-style: normal;
+  }
+  
+  
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+  /* Partagali Top Container */
+  .partgali-top-container {
+      position: relative;
+      background-image: url('images/Homepage 1.png'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 180vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: -2;
+  }
+
+  /* Logo Section */
+  .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      z-index: 3;
+  }
+
+  .logo-container img {
+      width: 120px; /* Adjust for logo size */
+      height: auto;
+  }
+
+  /* Content Section */
+  .content {
+    text-align: left;
+    color: white;
+    width: 50%;
+    z-index: 2;
+    padding-top: 15%;
+    padding-left: 40px;
+}
+
+.heritage-heading {
+    font-size: var(--font-size-medium);
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    /* font-family: 'Chronicle Display', serif; */
+}
+
+.heritage-heading::before {
+    content: '';
+    display: inline-block;
+    width: 55px;
+    height: 1.8px;
+    background-color: #FBD784;
+    margin-right: 30px;
+}
+
+.content h1 {
+  font-size: 4rem;
+  font-weight: var(--font-weight);
+  font-family: var(--font-family-secondary);
+  letter-spacing: 0.1rem;
+  margin: 0;
+}
+
+.scroll-down {
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+}
+
+.scroll-down::after {
+  content: '↓'; /* Arrow symbol */
+  font-size: 1.2rem;
+  animation: bounce 2s infinite;
+}
+/* Social Media Icons Section (Left - Vertical Alignment) */
+.social-icons {
+  position: absolute;
+  top: 30%;
+  left: 60px; /* Adjust as needed */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  gap: 20px; /* Spacing between items */
+}
+
+.social-icons span {
+  writing-mode: vertical-lr; /* Makes the text vertical and upright */
+  color:var(--primary-color);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+.social-icons a {
+  font-size: 1.2rem; /* Icon size */
+  color:var(--primary-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--accent-color); /* Change icon color on hover */
+  transform: rotate(90deg) scale(1.2); /* Slight zoom effect while keeping rotation */
+}
+
+.social-icons img {
+  width: 24px; /* Adjust size for icons */
+  height: 24px;
+  transform: rotate(90deg); /* Rotate the image icons to make them upright */
+}
+
+.right-start-section{
+  position: absolute;
+  top: 32%;
+  right: 90px;
+    transform: translateY(-50%);
+}
+ /* Start and Numbers with Divider Line */
+ .start-section {
+   position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the left */
+    gap: 25px; /* Space between text and numbers */
+    z-index: 3;
+}
+
+.start-section span {
+    position: relative;
+    color: var(--primary-color);
+    font-size: var(--font-size-medium); /* Font size for text */
+    font-weight: var(--font-weight);
+    letter-spacing: 0.1rem;
+    align-self: flex-end;
+}
+
+.start-section h5 {
+    position: relative;
+    color: var(--primary-color);
+    font-size: var(--font-size-medium); /* Font size for text */
+    font-weight: var(--font-weight);
+    padding-right: 10px;
+    align-self: flex-start;
+}
+
+
+.start-section .divider {
+  position: absolute;
+  top: 0;
+  right: -25px; /* Position the divider */
+  height: 220px; /* Total height of the divider */
+  width: 3px; /* Thickness of the divider */
+  background-color: white;
+}
+
+/* Filled Top Part */
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Same width as the divider */
+  height: 50%; /* Fill top half */
+  background-color: #FCFCFC; /* Filled color */
+}
+
+/* Unfilled Bottom Part */
+.divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Same width as the divider */
+  height: 80%; /* Unfilled bottom half */
+  background-color: #9c9c9c; /* Divider color for unfilled section */
+}
+
+.first-bgmap-conatiner{
+  background-image: url('images/banner_1_.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ /* margin-top: -7%; */
+
+
+}
+.timeline-container {
+  position: relative;
+  display: flex;
+  margin-top: -10%;
+  overflow: hidden;
+  /* width: 100%; */
+  z-index: 5;
+  padding-left: 25px;
+  
+  }
+  .timeline-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #ae090900, #0C1418);
+    z-index: 3;
+  }
+  .timeline-svg {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-width: 1400px; /* Set a maximum width for large screens */
+    transform: scale(1); /* Scales the SVG to 2x its original size
+    /* transform-origin: left; Ensures scaling happens from the center */ 
+    margin-top: -10%;
+    z-index: 10;
+    }
+    
+    .dotted-timeline-container, .duplicate-dotted-timeline-container{
+      position: relative;
+      display: flex;
+      overflow: hidden; /* Prevent any overflow from breaking the layout */
+      /* width: 100%; */
+      /* background-color: #0C1418; */
+        margin-top: -7%;
+        padding-left: 55px;
+      
+      
+      }
+      .dotted-timeline-svg{
+      width: 100%;
+      height: auto; /* Maintain aspect ratio */
+      max-width: 1400px;
+      /* padding-left: 60px; */
+      }
+      
+        .grey-path {
+          stroke: rgba(212, 210, 210, 0.875);
+          stroke-width: 3;
+          fill: none;
+          
+        }
+        .dotted-path{
+          stroke: rgba(212, 210, 210, 0.875);
+          stroke-width: 0px;
+          fill: #999999;
+          transform: scale(1)
+         }
+      
+        .white-path {
+          stroke: rgb(255, 255, 255);
+          stroke-width: 3;
+          fill: none;
+        }
+       
+/* Base Timeline Section Styling */
+.timeline-section, .third-timeline-section {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden; /* Hidden when not active */
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Smooth transition */
+  color: var(--primary-color);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 10;
+  position: relative;
+  display: flex; /* Keeps layout intact, avoids issues with `display: none` */
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 0 auto;
+  width: 60%;
+  position: absolute;
+ 
+}
+
+/* Fade-In Effect for Active State */
+.timeline-section.active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible; /* Makes it visible */
+  top: 185%;
+  left: 34%;
+}
+
+
+/* Fade-In Active State */
+.third-timeline-section.active {
+opacity: 1;
+transform: translateY(0);
+visibility: visible;
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 0 auto;
+  width: 60%;
+  position: absolute;
+  top: 347%;
+  left: 34%;
+}
+
+
+
+/* Container for Content */
+.timeline-content, .third-timeline-content {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 25px;
+max-width: 1200px;
+margin: 0 auto;
+/* margin-top: 70px; */
+padding-top: 60px;
+padding-left: 50px;
+}
+
+/* Text Section */
+.timeline-text {
+flex: 1;
+padding-left: 45px;
+padding-top: -13px;
+}
+
+.timeline-year {
+font-size: 9px;
+  color: #B3B3B3;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-left: 31px;
+  margin-top: -45%;
+  font-weight: 600;
+}
+.timeline-year span {
+font-size: 3rem;
+color: #ffffff;
+display: block;
+/* margin-top: 5px; */
+}
+
+.timeline-title {
+position: relative;
+color: #FBD784;
+font-size: 0.7rem;
+font-weight: bold;
+letter-spacing: 0.2rem;
+margin-bottom: 1rem;
+
+}
+
+.timeline-title::before {
+content: '';
+position: absolute;
+top: 45%; /* Vertically center the line relative to the text */
+left: -17%; /* Adjust this to control the distance of the line */
+width: 13%; /* Adjust length of the line */
+height: 1px; /* Thickness of the line */
+background-color: #FBD784; /* Match color to title */
+transform: translateY(-50%); /* Ensure it's perfectly centered */
+}
+
+@font-face {
+font-family: 'Chronicle Display';
+src: url('/fonts/ChronicleDisplay-Light.woff2') format('woff2'),
+     url('/fonts/ChronicleDisplay-Light.woff') format('woff'),
+     url('/fonts/ChronicleDisplay-Light.ttf') format('truetype');
+font-weight: 300; /* Lighter weight */
+font-style: normal;
+}
+
+
+.timeline-heading {
+font-size: 38px;
+font-weight: 300;
+color: #F2F2F2;
+margin-top: 15px;
+margin-bottom: 0.3rem;
+line-height: 1.2;
+font-family: 'Chronicle Display', serif;
+}
+
+.timeline-description {
+font-size: 14px;
+color: #B3B3B3;
+margin-bottom: 0.1rem;
+line-height: 1.3;
+font-weight: 400;
+font-family: 'Arial', 'Helvetica', sans-serif;
+}
+.first-background-year {
+position: absolute;
+top: 17%;
+left: 10%;
+z-index: 1;
+pointer-events: none; /* Prevents interaction */
+font-family: 'Gilroy', sans-serif;
+font-weight: bold;
+  font-size: 7rem; /* Adjust according to Figma */
+  color: rgba(255, 255, 255, 0.1); /* Ensure matching color */
+  letter-spacing: -0.02em; /* Adjust spacing to match Figma */
+}
+
+/* Image Section */
+.timeline-image {
+flex: 1;
+display: flex;
+justify-content: flex-end;
+}
+
+.timeline-image img {
+width: 95%;
+max-width: 400px;
+height: auto;
+border-radius: 8px;
+object-fit: cover;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.read-more {
+font-size: 1rem;
+color: #FBD784;
+text-decoration: none;
+font-weight: bold;
+display: inline-block;
+margin-top: 1rem;
+}
+
+.read-more:hover {
+text-decoration: underline;
+}
+
+
+.second-timeline-year{
+font-size: 9px;
+  color: #B3B3B3;
+  margin-bottom: 0;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 62px;
+  padding-left: 8px;
+
+
+}
+/* second timeline image-with text */
+
+.second-timeline-title {
+color: #FBD784;
+font-size: 1rem;
+font-weight: bold;
+letter-spacing: 1px;
+}
+
+
+/* Base Timeline Section Styling */
+.second-timeline-section, .fourth-timeline-section {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden; /* Hidden when not active */
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Smooth transition */
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 10;
+  position: relative;
+  display: flex; /* Keeps layout intact, avoids issues with `display: none` */
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 0 auto;
+  width: 60%;
+  position: absolute;
+  top: 245%;
+  left: 1%;
+}
+
+
+/* Fade-In Active State for Second Section */
+.second-timeline-section.active {
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Make it visible */
+  transform: translateY(0); /* Reset position */
+
+}
+
+/* Fade-In Active State for Fourth Section */
+.fourth-timeline-section.active {
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Make it visible */
+  transform: translateY(0); /* Reset position */
+  display: flex; /* Ensure the section is displayed */
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 0 auto;
+  width: 60%;
+  position: absolute;
+  top: 407%;
+  left: 1%;
+}
+
+
+.second-timeline-section .timeline-content,
+.fourth-timeline-section .timeline-content {
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 94px;
+max-width: 1200px;
+margin: 0 auto;
+/* background-color: #0C1418; */
+}
+
+.second-timeline-section .timeline-text,
+.fourth-timeline-section .timeline-text{
+
+padding-left: 45px;
+}
+
+.second-background-year {
+position: absolute;
+top: 5%;
+left: 50%;
+z-index: 1;
+pointer-events: none; /* Prevents interaction */
+font-family: 'Gilroy', sans-serif;
+font-weight: bold;
+  font-size: 7rem; /* Adjust according to Figma */
+  color: rgba(255, 255, 255, 0.1); /* Ensure matching color */
+  letter-spacing: -0.02em; /* Adjust spacing to match Figma */
+}
+
+.second-timeline-section .second-timeline-title,
+.fourth-timeline-section .second-timeline-title {
+position: relative;
+display: inline-block; /* Ensures the title has proper positioning */
+padding-left: 20px;  /* Adds space between the line and the text */
+}
+
+.second-timeline-section .second-timeline-title::before
+.fourth-timeline-section .second-timeline-title::before {
+  content: '';
+  position: absolute;
+  top: 50%;  /* Vertically center the line relative to the text */
+  right: 95%;   /* Position the line at the left of the text */
+  width: 25%; /* Make the line take up 50% of the width */
+  height: 1px; /* Thickness of the line */
+  background-color: #FBD784;  /* Yellow color */
+  /* z-index: -1;  Ensure the line stays behind the text */
+  transform: translateY(-50%); /* Vertically center the line */
+}
+
+.second-timeline-section .second-timeline-title::before,
+.fourth-timeline-section .second-timeline-title::before {
+  content: '';
+  position: absolute;
+  top: 50%;  /* Vertically center the line relative to the text */
+  right: 95%;   /* Position the line at the left of the text */
+  width: 25%; /* Make the line take up 50% of the width */
+  height: 1px; /* Thickness of the line */
+  background-color: #FBD784;  /* Yellow color */
+  transform: translateY(-50%); /* Vertically center the line */
+}
+
+
+/* Image Section */
+.second-timeline-image {
+flex: 0.8;
+display: flex;
+justify-content: flex-end;
+text-align: left;
+}
+
+.duplicate-timeline-container{
+position: relative;
+display: flex;
+overflow: hidden; /* Prevent any overflow from breaking the layout */
+margin-top: -5%;
+padding-left: 25px;
+
+}
